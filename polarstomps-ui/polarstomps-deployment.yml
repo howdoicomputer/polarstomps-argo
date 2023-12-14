@@ -27,5 +27,5 @@ spec:
             - name: DATABASE_URL
               valueFrom:
                 secretKeyRef:
-                  name: db
-                  key: db
+                  name: dburl
+                  key: url
