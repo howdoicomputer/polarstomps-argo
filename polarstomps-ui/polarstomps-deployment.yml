@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
         - image: howdoicomputer/polarstomps:v1
-          name: polarsteps
+          name: polarstomps
           ports:
             - containerPort: 8080
