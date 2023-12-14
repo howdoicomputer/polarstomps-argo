@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: polarstomps
+spec:
+  replicas: 1
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: polarstomps
+  template:
+    metadata:
+      labels:
+        app: polarstomps
+    spec:
+      containers:
+        - image: howdoicomputer/polarstomps:v1
+          name: polarsteps
+          ports:
+            - containerPort: 8080
