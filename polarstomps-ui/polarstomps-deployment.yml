@@ -13,6 +13,14 @@ spec:
       labels:
         app: polarstomps
     spec:
+      serviceAccountName: polarstomps
+      volumes:
+        - name: secrets-store-inline
+          csi:
+            driver: secrets-store.csi.k8s.io
+            readOnly: true
+            volumeAttributes:
+              secretProviderClass: "eks-aws-secrets"
       containers:
         - image: howdoicomputer/polarstomps:v4
           name: polarstomps
@@ -21,3 +29,10 @@ spec:
           resources:
             requests:
               cpu: "0.5"
+          volumeMounts:
+            - name: secrets-store-inline
+              mountPath: "/mnt/secrets-store"
+              readOnly: true
+          env:
+            - name: DATABASE_URL
+              value: "sqlite:///./sqlite.db"
