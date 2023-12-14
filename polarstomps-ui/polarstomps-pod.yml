@@ -6,7 +6,7 @@ metadata:
 spec:
   containers:
     - name: polarstomps
-      image: howdoicomputer/polarstomps
+      image: howdoicomputer/polarstomps:v1
       resources:
         limits:
           cpu: "0.5"
