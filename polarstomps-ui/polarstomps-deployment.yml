@@ -15,7 +15,7 @@ spec:
         app: polarstomps
     spec:
       containers:
-        - image: howdoicomputer/polarstomps:v1
+        - image: howdoicomputer/polarstomps:v2
           name: polarstomps
           ports:
             - containerPort: 8080
