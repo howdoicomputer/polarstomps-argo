@@ -25,7 +25,9 @@ spec:
               cpu: "0.5"
           env:
             - name: DATABASE_URL
-              valueFrom:
-                secretKeyRef:
-                  name: dburl
-                  key: url
+              value: "sqlite:///./sqlite.db"
+            # - name: DATABASE_URL
+            #   valueFrom:
+            #   secretKeyRef:
+            #     name: dburl
+            #     key: url
