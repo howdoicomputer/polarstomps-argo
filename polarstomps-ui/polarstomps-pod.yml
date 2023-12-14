@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: polarstomps
+  namespace: polarstomps
+spec:
+  containers:
+    - name: polarstomps
+      image: howdoicomputer/polarstomps
+      resources:
+        limits:
+          cpu: "0.5"
