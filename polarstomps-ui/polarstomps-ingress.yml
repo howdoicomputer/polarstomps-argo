@@ -1,12 +1,20 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: polarstomps
+  name: polarstomps-ingress
   namespace: polarstomps
   annotations:
     alb.ingress.kubernetes.io/scheme: internet-facing
     alb.ingress.kubernetes.io/target-type: ip
 spec:
+  ingressClassName: alb
   rules:
     - http:
         paths:
+          - path: /
+            pathType: prefix
+            backend:
+              service:
+                name: polarstomps
+                port:
+                  name: svc-port
