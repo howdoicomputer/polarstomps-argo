@@ -7,8 +7,10 @@ It is entirely meant to be consumed by ArgoCD. The manifest for deploying Polars
 # Deploying ArgoCD Application
 
 ``` sh
-kubectl apply -f polarstomps-application.yml
+kubectl apply -f polarstomps-application.yml -n argocd
 ```
+
+Then go to the UI to synchronize the app.
 
 # General Deployment
 
