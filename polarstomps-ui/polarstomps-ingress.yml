@@ -12,7 +12,7 @@ spec:
     - http:
         paths:
           - path: /
-            pathType: Exact
+            pathType: ImplementationSpecific
             backend:
               service:
                 name: polarstomps
